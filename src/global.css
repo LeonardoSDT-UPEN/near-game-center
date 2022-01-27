@@ -185,4 +185,17 @@ aside footer *:last-child {
   input:focus {
     box-shadow: 0 0 10em rgba(255, 255, 255, 0.02) inset;
   }
+  .snake {
+    background: #444;
+    display: flex;
+    margin: 20px 0 0 0;
+  }
+  canvas {
+    border: solid 8px white;
+    background: linear-gradient(
+      0deg,
+      rgba(0,102,201,1.0) 0%,
+      rgba(125,60,152,1.0) 100%
+    );
+  }
 }
