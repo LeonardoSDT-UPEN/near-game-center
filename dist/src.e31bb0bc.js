@@ -17323,7 +17323,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = "dev-1643244494614-13423023446625" || 'near-game-center';
+var CONTRACT_NAME = "dev-1643248538068-89535694592129" || 'near-game-center';
 
 function getConfig(env) {
   switch (env) {
@@ -17363,7 +17363,7 @@ function getConfig(env) {
       return {
         networkId: 'local',
         nodeUrl: 'http://localhost:3030',
-        keyPath: "".concat("C:\\Users\\USUARIO", "/.near/validator_key.json"),
+        keyPath: "".concat("/home/leonardosdt", "/.near/validator_key.json"),
         walletUrl: 'http://localhost:4000/wallet',
         contractName: CONTRACT_NAME
       };
@@ -17661,7 +17661,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63410" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59140" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

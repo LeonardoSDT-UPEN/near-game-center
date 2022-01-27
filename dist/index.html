@@ -5,33 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.df682a99.ico">
   <link rel="apple-touch-icon" href="/favicon.df682a99.ico">
-  <title>Welcome to NEAR</title>
+  <title>NEAR Game Center</title>
   <link rel="stylesheet" href="/global.e50bbfba.css">
 <script src="/global.e50bbfba.js"></script></head>
 <body>
   <main id="signed-out-flow" style="display: none">
-    <h1>Welcome to NEAR!</h1>
+    <h1>¡Bienvenido al NEAR Game Center!</h1>
     <p>
-      To make use of the NEAR blockchain, you need to sign in. The button
-      below will sign you in using NEAR Wallet.
-    </p>
-    <p>
-      By default, when your app runs in "development" mode, it connects
-      to a test network ("testnet") wallet. This works just like the main
-      network ("mainnet") wallet, but the NEAR Tokens on testnet aren't
-      convertible to other currencies – they're just for testing!
-    </p>
-    <p>
-      Go ahead and click the button below to try it out:
+      Para poder jugar necesitas iniciar sesión, esto debido a que se usa la
+      blockchain de NEAR. El botón de abajo te ayudará usando tu Wallet de NEAR.
     </p>
     <p style="text-align: center; margin-top: 2.5em">
-      <button id="sign-in-button">Sign in</button>
+      <button id="sign-in-button">Iniciar sesión</button>
     </p>
   </main>
 
   <div id="signed-in-flow" style="display: none">
     <button class="link" style="float: right" id="sign-out-button">
-      Sign out
+      Cerrar sesión
     </button>
     <main>
       <h1>
@@ -42,16 +33,16 @@
       <form>
         <fieldset id="fieldset">
           <label for="greeting" style="display: block; color: var(--gray); margin-bottom: 0.5em">
-            Change greeting
+            Aquí puedes jugar algunos juegos clásicos como el Snake:
           </label>
-          <div style="display: flex">
-            <input style="flex: 1" autocomplete="off" id="greeting" data-behavior="greeting">
-            <button disabled="" style="border-radius: 0 5px 5px 0">Save</button>
-          </div>
+            <input id="greeting" style="visibility: hidden;">
         </fieldset>
       </form>
-      <p>
-        Look at that! A Hello World app! This greeting is stored on the NEAR blockchain. Check it out:
+      <div style="display: flex;">
+        <button style="border-radius: 5px; flex: auto;" type="button">Snake</button>
+      </div>
+      <!-- <p>
+        Aquí puedes jugar algunos juegos clásicos como el Snake:
       </p>
       <ol>
         <li>
@@ -70,15 +61,21 @@
           can see how this happens by looking in <code>package.json</code> at the
           <code>scripts</code> section to find the <code>dev</code> command.
         </li>
-      </ol>
+      </ol> 
       <hr>
       <p>
         To keep learning, check out
         <a target="_blank" href="https://docs.near.org">the NEAR docs</a>
         or look through some
         <a target="_blank" href="https://examples.near.org">example apps</a>.
-      </p>
+      </p>-->
+
     </main>
+  </div>
+
+  <div id="snake" style="display: none">
+    <p id="score">Score: 0</p>
+    <canvas width="700" height="700"></canvas>
   </div>
 
   <aside data-behavior="notification" style="display: none">
@@ -91,6 +88,7 @@
     </footer>
   </aside>
 
+  <script src="/snake.72ff5d51.js"></script>
   <script src="/src.e31bb0bc.js"></script>
 </body>
 </html>
