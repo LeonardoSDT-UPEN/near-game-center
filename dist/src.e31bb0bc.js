@@ -8874,6 +8874,7 @@ function isnan (val) {
 
 },{"base64-js":"../node_modules/base64-js/index.js","ieee754":"../node_modules/ieee754/index.js","isarray":"../node_modules/isarray/index.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/safe-buffer/index.js":[function(require,module,exports) {
 
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
 var Buffer = buffer.Buffer
@@ -8895,6 +8896,8 @@ if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow)
 function SafeBuffer (arg, encodingOrOffset, length) {
   return Buffer(arg, encodingOrOffset, length)
 }
+
+SafeBuffer.prototype = Object.create(Buffer.prototype)
 
 // Copy static methods from Buffer
 copyProps(Buffer, SafeBuffer)
@@ -10679,7 +10682,7 @@ function getTransactionLastResult(txResult) {
 }
 exports.getTransactionLastResult = getTransactionLastResult;
 
-},{"buffer":"../node_modules/buffer/index.js"}],"../node_modules/depd/lib/browser/index.js":[function(require,module,exports) {
+},{"buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js":[function(require,module,exports) {
 /*!
  * depd
  * Copyright(c) 2015 Douglas Christopher Wilson
@@ -10751,7 +10754,7 @@ function wrapproperty(obj, prop, message) {
     throw new TypeError('property must be configurable');
   }
 }
-},{}],"../node_modules/http-errors/node_modules/depd/lib/browser/index.js":[function(require,module,exports) {
+},{}],"../node_modules/depd/lib/browser/index.js":[function(require,module,exports) {
 /*!
  * depd
  * Copyright(c) 2015 Douglas Christopher Wilson
@@ -11351,7 +11354,7 @@ function populateConstructorExports(exports, codes, HttpError) {
 function toClassName(name) {
   return name.substr(-5) !== 'Error' ? name + 'Error' : name;
 }
-},{"depd":"../node_modules/http-errors/node_modules/depd/lib/browser/index.js","setprototypeof":"../node_modules/setprototypeof/index.js","statuses":"../node_modules/statuses/index.js","inherits":"../node_modules/inherits/inherits_browser.js","toidentifier":"../node_modules/toidentifier/index.js"}],"../node_modules/near-api-js/lib/utils/exponential-backoff.js":[function(require,module,exports) {
+},{"depd":"../node_modules/depd/lib/browser/index.js","setprototypeof":"../node_modules/setprototypeof/index.js","statuses":"../node_modules/statuses/index.js","inherits":"../node_modules/inherits/inherits_browser.js","toidentifier":"../node_modules/toidentifier/index.js"}],"../node_modules/near-api-js/lib/utils/exponential-backoff.js":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 async function exponentialBackoff(startWaitTime, retryNumber, waitBackoff, getResult) {
@@ -13668,7 +13671,7 @@ class JsonRpcProvider extends provider_1.Provider {
 }
 exports.JsonRpcProvider = JsonRpcProvider;
 
-},{"depd":"../node_modules/depd/lib/browser/index.js","./provider":"../node_modules/near-api-js/lib/providers/provider.js","../utils/web":"../node_modules/near-api-js/lib/utils/web.js","../utils/errors":"../node_modules/near-api-js/lib/utils/errors.js","borsh":"../node_modules/borsh/lib/index.js","../utils/exponential-backoff":"../node_modules/near-api-js/lib/utils/exponential-backoff.js","../utils/rpc_errors":"../node_modules/near-api-js/lib/utils/rpc_errors.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/providers/index.js":[function(require,module,exports) {
+},{"depd":"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js","./provider":"../node_modules/near-api-js/lib/providers/provider.js","../utils/web":"../node_modules/near-api-js/lib/utils/web.js","../utils/errors":"../node_modules/near-api-js/lib/utils/errors.js","borsh":"../node_modules/borsh/lib/index.js","../utils/exponential-backoff":"../node_modules/near-api-js/lib/utils/exponential-backoff.js","../utils/rpc_errors":"../node_modules/near-api-js/lib/utils/rpc_errors.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/providers/index.js":[function(require,module,exports) {
 "use strict";
 /** @hidden @module */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -15466,7 +15469,7 @@ class Account {
 }
 
 exports.Account = Account;
-},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/depd/lib/browser/index.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./providers":"../node_modules/near-api-js/lib/providers/index.js","borsh":"../node_modules/borsh/lib/index.js","./utils/key_pair":"../node_modules/near-api-js/lib/utils/key_pair.js","./utils/errors":"../node_modules/near-api-js/lib/utils/errors.js","./utils/rpc_errors":"../node_modules/near-api-js/lib/utils/rpc_errors.js","./constants":"../node_modules/near-api-js/lib/constants.js","./utils/exponential-backoff":"../node_modules/near-api-js/lib/utils/exponential-backoff.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/account_multisig.js":[function(require,module,exports) {
+},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./providers":"../node_modules/near-api-js/lib/providers/index.js","borsh":"../node_modules/borsh/lib/index.js","./utils/key_pair":"../node_modules/near-api-js/lib/utils/key_pair.js","./utils/errors":"../node_modules/near-api-js/lib/utils/errors.js","./utils/rpc_errors":"../node_modules/near-api-js/lib/utils/rpc_errors.js","./constants":"../node_modules/near-api-js/lib/constants.js","./utils/exponential-backoff":"../node_modules/near-api-js/lib/utils/exponential-backoff.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/account_multisig.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 var __importDefault = (this && this.__importDefault) || function (mod) {
@@ -15783,7 +15786,7 @@ const convertActions = (actions, accountId, receiverId) => actions.map((a) => {
     return action;
 });
 
-},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/depd/lib/browser/index.js","./account":"../node_modules/near-api-js/lib/account.js","./utils/format":"../node_modules/near-api-js/lib/utils/format.js","./utils/key_pair":"../node_modules/near-api-js/lib/utils/key_pair.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./utils/web":"../node_modules/near-api-js/lib/utils/web.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/account_creator.js":[function(require,module,exports) {
+},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js","./account":"../node_modules/near-api-js/lib/account.js","./utils/format":"../node_modules/near-api-js/lib/utils/format.js","./utils/key_pair":"../node_modules/near-api-js/lib/utils/key_pair.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./utils/web":"../node_modules/near-api-js/lib/utils/web.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/account_creator.js":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UrlAccountCreator = exports.LocalAccountCreator = exports.AccountCreator = void 0;
@@ -16097,7 +16100,7 @@ function validateBNLike(argMap) {
     }
 }
 
-},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/depd/lib/browser/index.js","./providers":"../node_modules/near-api-js/lib/providers/index.js","./utils/errors":"../node_modules/near-api-js/lib/utils/errors.js"}],"../node_modules/near-api-js/lib/near.js":[function(require,module,exports) {
+},{"bn.js":"../node_modules/bn.js/lib/bn.js","depd":"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js","./providers":"../node_modules/near-api-js/lib/providers/index.js","./utils/errors":"../node_modules/near-api-js/lib/utils/errors.js"}],"../node_modules/near-api-js/lib/near.js":[function(require,module,exports) {
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -16511,7 +16514,7 @@ class ConnectedWalletAccount extends account_1.Account {
 }
 exports.ConnectedWalletAccount = ConnectedWalletAccount;
 
-},{"depd":"../node_modules/depd/lib/browser/index.js","./account":"../node_modules/near-api-js/lib/account.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./utils":"../node_modules/near-api-js/lib/utils/index.js","borsh":"../node_modules/borsh/lib/index.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/common-index.js":[function(require,module,exports) {
+},{"depd":"../node_modules/near-api-js/node_modules/depd/lib/browser/index.js","./account":"../node_modules/near-api-js/lib/account.js","./transaction":"../node_modules/near-api-js/lib/transaction.js","./utils":"../node_modules/near-api-js/lib/utils/index.js","borsh":"../node_modules/borsh/lib/index.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/near-api-js/lib/common-index.js":[function(require,module,exports) {
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -17323,7 +17326,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = "dev-1643248538068-89535694592129" || 'near-game-center';
+var CONTRACT_NAME = "dev-1643260367027-81402521994359" || 'near-game-center';
 
 function getConfig(env) {
   switch (env) {
@@ -17363,7 +17366,7 @@ function getConfig(env) {
       return {
         networkId: 'local',
         nodeUrl: 'http://localhost:3030',
-        keyPath: "".concat("/home/leonardosdt", "/.near/validator_key.json"),
+        keyPath: "".concat("/home/erick", "/.near/validator_key.json"),
         walletUrl: 'http://localhost:4000/wallet',
         contractName: CONTRACT_NAME
       };
@@ -17661,7 +17664,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59140" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36175" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
